@@ -19,7 +19,11 @@
 // var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/football/2017/jan/07/preston-north-end-arsenal-fa-cup-match-report?show-fields=body'
 // var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/lifeandstyle/2017/jan/08/botox-nation-america-addiction-crack-like-cosmetic-procedures?show-fields=all';
 
-// this generates a request for the headlines' id, so that they can be used to access each individual articles' data later.
+// this generates a request for the headlines' webUrl, so that they can be used to access each individual articles' data later.
+// newsHeadlinesModel
+//this.headlinesIds = [] - ids for the guardians api bodyText
+//this.headlinesWebUrls = [] - urls for getting the summary using the Aylien API sentences
+
 var myRequest = new XMLHttpRequest();
 
 myRequest.onreadystatechange = function() {
@@ -36,5 +40,8 @@ myRequest.onreadystatechange = function() {
 
 };
 var headlines = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?order-by=newest&q=headline?show-fields=body';
+// var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/lifeandstyle/2017/jan/08/botox-nation-america-addiction-crack-like-cosmetic-procedures?show-fields=all';
 myRequest.open('GET', headlines, true);
 myRequest.send(null);
+
+// newsSummaryModel
