@@ -4,12 +4,22 @@
     <script src="src/newsHeadlinesModel.js"></script>
     <script src="src/newsSummaryModel.js"></script>
     <script src="src/newsSummaryView.js"></script>
+    <script src="src/newsHeadlinesView.js"></script>
+    <script src="src/newsHeadlinesController.js"></script>
     <script src="spec/assert.js"></script>
   </head>
   <body>
     <div id="app">hello</div>
+      <script>
+      var headlines = new NewsHeadlinesModel();
+      headlines.getHeadlinesText();
+      var headlinesView = new NewsHeadlinesView();
+      headlinesView.convertHeadlinesTextToHtmlString(headlines);
+      var controller = new NewsHeadlinesController();
+      controller.addHeadlinesToPage(headlinesView);
+    </script>
 
-    <script src="spec/newsHeadlinesModelTests.js"></script>
+    <!-- <script src="spec/newsHeadlinesModelTests.js"></script> -->
     <!-- <script src="spec/newsSummaryModelTests.js"></script> -->
   </body>
 </html>

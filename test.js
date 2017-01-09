@@ -17,7 +17,7 @@
 
 
 // var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/football/2017/jan/07/preston-north-end-arsenal-fa-cup-match-report?show-fields=body'
-// var url = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/lifeandstyle/2017/jan/08/botox-nation-america-addiction-crack-like-cosmetic-procedures?show-fields=all';
+// var url = 'http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=https://www.theguardian.com/politics/blog/live/2017/jan/08/theresa-may-interview-sky-sophy-ridge-andrew-marr-with-skys-sophy-ridge-politics-live';
 
 // this generates a request for the headlines' webUrl, so that they can be used to access each individual articles' data later.
 // newsHeadlinesModel

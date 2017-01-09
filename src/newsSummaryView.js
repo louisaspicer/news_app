@@ -15,7 +15,6 @@
         newsSummaryModel.getSummaryFromApi(index);
         var summaryText = newsSummaryModel.summaries[index];
         self.htmlString += "<li><div>" + summaryText + "</div></li>";
-        console.log(self.htmlString);
       }
       self.htmlString += "</ul>";
     },

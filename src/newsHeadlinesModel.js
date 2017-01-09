@@ -3,13 +3,14 @@
 (function(exports) {
   function NewsHeadlinesModel() {
     this.headlinesIds = [];
+    this.headlinesText = [];
   }
 
   NewsHeadlinesModel.prototype = {
 
     getTopHeadlinesIds: function() {
       var myRequest = new XMLHttpRequest();
-      var headlines = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?order-by=newest&q=headline?show-fields=body';
+      var headlines = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all&order-by=newest&q=headline';
       myRequest.open('GET', headlines, true);
       var headlinesIds = this.headlinesIds;
 
@@ -17,6 +18,7 @@
 
         var json = myRequest.responseText;
         var obj = JSON.parse(json);
+        console.log(obj);
 
           if (myRequest.readyState === 4 && myRequest.status === 200) {
             var length = obj.response.results.length;
@@ -40,6 +42,30 @@
       // };
 
       myRequest.send();
+  },
+
+  getHeadlinesText: function() {
+    var myRequest = new XMLHttpRequest();
+    var headlines = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=all&order-by=newest&q=headline';
+    myRequest.open('GET', headlines, true);
+    var headlinesText = this.headlinesText;
+
+    myRequest.addEventListener('load', function() {
+
+      var json = myRequest.responseText;
+      var obj = JSON.parse(json);
+      console.log(obj)
+
+        if (myRequest.readyState === 4 && myRequest.status === 200) {
+          var length = obj.response.results.length;
+          for (var index = 0; index < length; index++) {
+            headlinesText.push(obj.response.results[index].fields.webTitle);
+          }
+        }
+
+    }, false);
+
+    myRequest.send();
   }
 
 
