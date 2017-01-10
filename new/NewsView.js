@@ -10,7 +10,8 @@
 
       for (var index = 0; index < length; index++) {
         var headlineText = newsData[index].fields.headline;
-        var articlesHtml = "<a class='link' id='"+index+"' href='#'><li>" + headlineText + "</li></a>";
+        var image = newsData[index].fields.thumbnail;
+        var articlesHtml = "<li><a class='link' id='"+index+"' href='#"+index+"'>"+headlineText+ "</li></a><img src='" + image + "'><br><br>";
         document.getElementById("headlines").innerHTML += articlesHtml;
       }
     },
