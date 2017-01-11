@@ -22,24 +22,8 @@
       myRequest.send();
     },
 
-    getIdFromURL: function(location) {
-      return Number(location.hash.split("#")[1]);
-    },
-
-    showSingleArticle: function(id) {
-      var article = this.newsModel.newsData[id].fields.body;
-      var headline = this.newsModel.newsData[id].fields.headline;
-      var image = this.newsModel.newsData[id].fields.thumbnail;
-      var articleHtml = "<li>" + headline + "</li><img src='" + image + "'><br><br>";
-      // var singleArticle = new SingleArticle(article, headline, image)
-      headline = document.getElementById("headlines");
-      headline.innerHTML = articleHtml;
-      var element = document.getElementById("body");
-      element.innerHTML = article; //singleArticle.displayNote();
-    },
-
     showArticleForCurrentPage: function() {
-      this.showSingleArticle(this.getIdFromURL(window.location));
+
     },
 
     makeURLChangeShowNoteForCurrentPage: function() {

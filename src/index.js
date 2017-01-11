@@ -3,7 +3,9 @@ window.onload = function() {
   var view = new NewsView();
   var controller = new NewsController(model, view);
 
+  console.log(controller)
 
   controller.getData();
+  controller.makeURLChangeShowNoteForCurrentPage();
 
 };
