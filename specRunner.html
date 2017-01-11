@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="src/newsHeadlinesModel.js"></script>
-    <script src="src/newsSummaryModel.js"></script>
-    <script src="src/newsSummaryView.js"></script>
-    <script src="src/newsHeadlinesView.js"></script>
-    <script src="src/newsHeadlinesController.js"></script>
+    <script src="src/newsModel.js"></script>
+    <script src="src/newsView.js"></script>
+    <script src="src/newsController.js"></script>
     <script src="spec/assert.js"></script>
   </head>
   <body>
-    <div id="app">hello</div>
-      <script>
-      var headlines = new NewsHeadlinesModel();
-      headlines.getHeadlinesText();
-      var headlinesView = new NewsHeadlinesView();
-      headlinesView.convertHeadlinesTextToHtmlString(headlines);
-      var controller = new NewsHeadlinesController();
-      controller.addHeadlinesToPage(headlinesView);
-    </script>
+    <div id="headlines">hello</div>
 
-    <!-- <script src="spec/newsHeadlinesModelTests.js"></script> -->
-    <!-- <script src="spec/newsSummaryModelTests.js"></script> -->
+    <script src="spec/newsModelTests.js"></script>
+    <!-- <script src="spec/newsSummaryModelTests.js"></script>
   </body>
 </html>

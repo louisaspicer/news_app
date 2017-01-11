@@ -22,9 +22,9 @@
       myRequest.send();
     },
 
-    saveNewsArticles: function(json) {
-      this.newsModel.saveNewsArticles(json);
-    },
+    // saveNewsArticles: function(json) {
+    //   this.newsModel.saveNewsArticles(json);
+    // },
 
     showLinksOnPage: function(json) {
       this.newsModel.saveNewsArticles(json.response.results); //saves data to an newsData array in model
